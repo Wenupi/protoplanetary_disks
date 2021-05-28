@@ -29,6 +29,7 @@ add_Star = False                 #Add star to the images? Problem with intensity
 add_back = True                 #Add the 2.7 background intensity?
 scattering = True                #Scattering ON or OFF?
 
+plot_opacity = True
 plot_sky = True                  #MAP (pdf)
 plot_Temperature = True          #MAP of the temperature structure
 intensity_log = True             #color map (intensity) in log scale?

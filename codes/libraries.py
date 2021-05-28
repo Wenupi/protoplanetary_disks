@@ -11,6 +11,7 @@ import matplotlib.patches as patches
 from matplotlib import rc
 rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text', usetex=True)
+
 import dsharp_opac as opacity
 
 import warnings
