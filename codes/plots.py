@@ -2,42 +2,42 @@
 
 ##################################################
 
-if(plot_opacity == True):
-    p_plot = np.linspace(2.0,6.0,21)
-    a_plot = np.logspace(np.log10(0.001),np.log10(10.),21)
-
-    EXT_plot = EXT(a_plot,p_plot)
-    ALB_plot = ALB(a_plot,p_plot)
-    
-    plt.close()
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    im = ax.imshow(EXT_plot, cmap='hot', origin='lower', interpolation='gaussian',aspect='auto')
-    cbar = fig.colorbar(im,orientation='vertical')
-    cbar.set_label(r"$\chi_{"+str(wl)+"\mathrm{cm}} [\mathrm{cm}^2/\mathrm{g}_{\mathrm{dust}}]$")
-    plt.xticks( np.linspace(0,len(a_plot)-1,len(a_plot)) , np.round_(np.log10(a_plot),decimals=2))
-    plt.yticks( np.linspace(0,(len(p_plot)-1),len(p_plot)), np.round_(p_plot, decimals=2))
-    plt.xticks(rotation=90)
-    plt.yticks(rotation=0)
-    plt.xlabel('$\log (a_{\mathrm{max}} [\mathrm{cm}])$')
-    plt.ylabel('$p$')
-    plt.savefig('Opacity/EXT_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf', bbox_inches='tight')
-    print ('   - Opacity/EXT_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf saved!')
-
-    plt.close()
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    im = ax.imshow(ALB_plot, cmap='hot', origin='lower', interpolation='gaussian',aspect='auto')
-    cbar = fig.colorbar(im,orientation='vertical')
-    cbar.set_label(r"$\omega_{"+str(wl)+"\mathrm{cm}}$")
-    plt.xticks( np.linspace(0,len(a_plot)-1,len(a_plot)) , np.round_(np.log10(a_plot),decimals=2))
-    plt.yticks( np.linspace(0,(len(p_plot)-1),len(p_plot)), np.round_(p_plot, decimals=2))
-    plt.xticks(rotation=90)
-    plt.yticks(rotation=0)
-    plt.xlabel('$\log (a_{\mathrm{max}} [\mathrm{cm}])$')
-    plt.ylabel('$p$')
-    plt.savefig('Opacity/ALB_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf', bbox_inches='tight')
-    print ('   - Opacity/ALB_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf saved!')
+#if(plot_opacity == True):
+#    p_plot = np.linspace(2.0,6.0,21)
+#    a_plot = np.logspace(np.log10(0.001),np.log10(10.),21)
+#
+#    EXT_plot = EXT(a_plot,p_plot)
+#    ALB_plot = ALB(a_plot,p_plot)
+#    
+#    plt.close()
+#    fig = plt.figure()
+#    ax = fig.add_subplot(111)
+#    im = ax.imshow(EXT_plot, cmap='hot', origin='lower', interpolation='gaussian',aspect='auto')
+#    cbar = fig.colorbar(im,orientation='vertical')
+#    cbar.set_label(r"$\chi_{"+str(wl)+"\mathrm{cm}} [\mathrm{cm}^2/\mathrm{g}_{\mathrm{dust}}]$")
+#    plt.xticks( np.linspace(0,len(a_plot)-1,len(a_plot)) , np.round_(np.log10(a_plot),decimals=2))
+#    plt.yticks( np.linspace(0,(len(p_plot)-1),len(p_plot)), np.round_(p_plot, decimals=2))
+#    plt.xticks(rotation=90)
+#    plt.yticks(rotation=0)
+#    plt.xlabel('$\log (a_{\mathrm{max}} [\mathrm{cm}])$')
+#    plt.ylabel('$p$')
+#    plt.savefig('Opacity/EXT_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf', bbox_inches='tight')
+#    print ('   - Opacity/EXT_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf saved!')
+#
+#    plt.close()
+#    fig = plt.figure()
+#    ax = fig.add_subplot(111)
+#    im = ax.imshow(ALB_plot, cmap='hot', origin='lower', interpolation='gaussian',aspect='auto')
+#    cbar = fig.colorbar(im,orientation='vertical')
+#    cbar.set_label(r"$\omega_{"+str(wl)+"\mathrm{cm}}$")
+#    plt.xticks( np.linspace(0,len(a_plot)-1,len(a_plot)) , np.round_(np.log10(a_plot),decimals=2))
+#    plt.yticks( np.linspace(0,(len(p_plot)-1),len(p_plot)), np.round_(p_plot, decimals=2))
+#    plt.xticks(rotation=90)
+#    plt.yticks(rotation=0)
+#    plt.xlabel('$\log (a_{\mathrm{max}} [\mathrm{cm}])$')
+#    plt.ylabel('$p$')
+#    plt.savefig('Opacity/ALB_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf', bbox_inches='tight')
+#    print ('   - Opacity/ALB_nu'+str(np.round(nu/1.e9,2))+'GHz.pdf saved!')
 
 ##########################################################    
 if(plot_sky == True):
@@ -73,7 +73,7 @@ if(plot_sky == True):
         beam_d = patches.Circle((-0.75*length/2.,-0.75*length/2),radius=beam*distance/2.,facecolor='w', edgecolor='k')
         ax[0][1].add_patch(beam_d)
 
-                
+
     ax[0][0].set_ylabel(r'$y \ \mathrm{[au]}$')
     ax[0][0].set_title(r'$\mathrm{Intensity \ Model}$')
     ax[0][0].set_xticks([])   

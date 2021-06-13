@@ -155,7 +155,8 @@ exec(open('convolution.py').read())
             
 ####################################################################################################
 print ('- Files written:')
-if( (plot_opacity == True) or (plot_sky ==True)):
+if plot_sky ==True:
+#if( (plot_opacity == True) or (plot_sky ==True)):
     exec(open('plots.py').read())
 if(wr_files ==True):
     exec(open('write_files.py').read())
