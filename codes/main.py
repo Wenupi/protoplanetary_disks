@@ -9,6 +9,7 @@ exec(open('constants.py').read())
 start_time = time.time()
 
 ####################################################################################################
+
 #Input parameters
 exec(open('parameters.py').read())
 exec(open('equations.py').read())
@@ -33,7 +34,30 @@ for j in range(ny):
 ####################################################################################################
 #Creates the 3D Source function
 print ('- Creating 3D source function ...')
-funcion_S, funcion_T = FUN_creates_source_function(x_array,y_array)
+funcion_S, funcion_T = FUN_creates_source_function(x_array, y_array)
+"""
+Lines to save ================================
+"""
+filename = 'save_try.obj'
+items_to_save = (funcion_S, funcion_T)
+with open(filename, 'wb') as filehandler:
+    pickle.dump(items_to_save, filehandler)
+"""
+==============================================
+"""
+
+"""
+Lines to load ================================
+"""
+#filename = 'save_try.obj'
+#with open(filename, 'rb') as filehandler:
+#    reloaded_tuple = pickle.load(filehandler)
+#
+#funcion_S = reloaded_tuple[0]
+#funcion_T = reloaded_tuple[1]
+"""
+==============================================
+"""
 ####################################################################################################
 #2D grid (sky plane)
 Bright = np.zeros((ny,nx))
